@@ -13,8 +13,10 @@ nav.nav {
     font-size: 18px;
     font-weight: 600; }
 
-.main h1.h1 {
-  text-align: center; }
+.main {
+  min-height: 70vh; }
+  .main h1.h1 {
+    text-align: center; }
 
 section.posts .container .row.justify-content-center .col-12.post {
   margin: 20px 0; }
