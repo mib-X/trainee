@@ -1,0 +1,15 @@
+{
+  "name": "vendor_name/trainie",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "mib-X",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "twbs/bootstrap": "5.0.2"
+  }
+}
