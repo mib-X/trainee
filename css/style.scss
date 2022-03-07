@@ -12,7 +12,9 @@ header.header {
 }
 nav.nav {
   background-color: #eee;
-  a.nav-link.active {}
+  a.nav-link.active {
+    color: #000;
+  }
   a.nav-link {
     font-size: 18px;
     font-weight: 600;
