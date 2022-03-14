@@ -1,10 +1,11 @@
 <?php
 return [
     0 => [
+        'id' => 0,
         'title' => 'Lorem ipsum dolor sit amet 0.',
         'author' => 'Admin',
         'post_date' => '07.02.2022',
-        'thumb' => 'img/blog-image.jpg',
+        'thumb' => HOST . '/img/blog-image.jpg',
         'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores eum facilis laboriosam
                         magnam pariatur placeat quas quibusdam rerum voluptate?</p>
                     <p>Cum cupiditate ducimus exercitationem nemo nihil recusandae rem velit veniam? Animi ipsam iste
@@ -16,10 +17,11 @@ Asperiores aut, consectetur in maxime qui quia ut?</p>
                     <p>Adipisci cupiditate doloremque enim eveniet, excepturi laborum modi nam nemo nostrum, obcaecati
                         perferendis placeat provident, quibusdam rem repudiandae voluptas voluptatum!</p>'],
     1 => [
+        'id' => 1,
         'title' => 'Lorem ipsum dolor sit amet 1.',
         'author' => 'Admin1',
         'post_date' => '07.02.2022',
-        'thumb' => 'img/blog-image.jpg',
+        'thumb' => HOST . '/img/blog-image.jpg',
         'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores eum facilis laboriosam
                         magnam pariatur placeat quas quibusdam rerum voluptate?</p>
                     <p>Cum cupiditate ducimus exercitationem nemo nihil recusandae rem velit veniam? Animi ipsam iste
@@ -31,10 +33,11 @@ Asperiores aut, consectetur in maxime qui quia ut?</p>
                     <p>Adipisci cupiditate doloremque enim eveniet, excepturi laborum modi nam nemo nostrum, obcaecati
                         perferendis placeat provident, quibusdam rem repudiandae voluptas voluptatum!</p>'],
     2 => [
+        'id' => 2,
         'title' => 'Lorem ipsum dolor sit amet 2.',
         'author' => 'Admin2',
         'post_date' => '07.02.2022',
-        'thumb' => 'img/blog-image.jpg',
+        'thumb' => HOST . '/img/blog-image.jpg',
         'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores eum facilis laboriosam
                         magnam pariatur placeat quas quibusdam rerum voluptate?</p>
                     <p>Cum cupiditate ducimus exercitationem nemo nihil recusandae rem velit veniam? Animi ipsam iste
@@ -46,10 +49,11 @@ Asperiores aut, consectetur in maxime qui quia ut?</p>
                     <p>Adipisci cupiditate doloremque enim eveniet, excepturi laborum modi nam nemo nostrum, obcaecati
                         perferendis placeat provident, quibusdam rem repudiandae voluptas voluptatum!</p>'],
     3 => [
+        'id' => 3,
         'title' => 'Lorem ipsum dolor sit amet 3.',
         'author' => 'Admin3',
         'post_date' => '07.02.2022',
-        'thumb' => 'img/blog-image.jpg',
+        'thumb' => HOST . '/img/blog-image.jpg',
         'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores eum facilis laboriosam
                         magnam pariatur placeat quas quibusdam rerum voluptate?</p>
                     <p>Cum cupiditate ducimus exercitationem nemo nihil recusandae rem velit veniam? Animi ipsam iste
@@ -61,10 +65,11 @@ Asperiores aut, consectetur in maxime qui quia ut?</p>
                     <p>Adipisci cupiditate doloremque enim eveniet, excepturi laborum modi nam nemo nostrum, obcaecati
                         perferendis placeat provident, quibusdam rem repudiandae voluptas voluptatum!</p>'],
     4 => [
+        'id' => 4,
         'title' => 'Lorem ipsum dolor sit amet 4.',
         'author' => 'Admin4',
         'post_date' => '07.02.2022',
-        'thumb' => 'img/blog-image.jpg',
+        'thumb' => HOST . '/img/blog-image.jpg',
         'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores eum facilis laboriosam
                         magnam pariatur placeat quas quibusdam rerum voluptate?</p>
                     <p>Cum cupiditate ducimus exercitationem nemo nihil recusandae rem velit veniam? Animi ipsam iste

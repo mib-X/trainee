@@ -1,6 +1,10 @@
 header.header {
 
   .container {
+    a{
+      color: #000;
+      text-decoration: none;
+    }
     .logo {
       background-color: lavender;
       font-size: 30px;
@@ -12,13 +16,9 @@ header.header {
 }
 nav.nav {
   background-color: #eee;
-  a.nav-link.active {
-    color: #000;
-  }
   a.nav-link {
     font-size: 18px;
     font-weight: 600;
-
   }
 }
 .main{
@@ -34,8 +34,15 @@ section.posts {
         margin: 20px 0;
 
         h2.h2.post__title {
+          a {
+            color: #000;
+            text-decoration: none;
+          }
+          a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
-
         .post__header {
           display: flex;
           justify-content: start;
