@@ -5,5 +5,6 @@ return [
     '/posts' => 'post/index',
     '/test' => 'test/index',
     '/' => 'default/index',
-    '/profile' => 'profile/index'
+    '/profile' => 'profile/index',
+    '/add' => 'add/index'
 ];

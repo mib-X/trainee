@@ -11,7 +11,7 @@
                                 <div class="post__author mr-3">
                                     <a href="#" class="author-link"></a><?php echo $post['author']; ?>
                                 </div>
-                                <div class="post__date"><?php echo $post['post_date']; ?></div>
+                                <div class="post__date"><?php echo $post['date_added']; ?></div>
                             </div>
                             <div class="post__body">
                                 <img src="<?php echo $post['thumb']; ?>" alt="" class="post__img float-md-left mr-3 mb-3">

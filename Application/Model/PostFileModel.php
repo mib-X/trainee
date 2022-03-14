@@ -5,7 +5,7 @@ namespace Application\Model;
 
 use \Core\ModelFile as ModelFile;
 
-class PostModel extends ModelFile
+class PostFileModel extends ModelFile
 {
     public function getPost($id) {
         return $this->data[$id];

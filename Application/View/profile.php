@@ -12,7 +12,7 @@
                     <li>Имя - <span><?php echo  $name; ?>  </span></span></li>
                     <li>E-mail - <span><?php echo  $email; ?>  </span></span></li>
                     <li>Дата рождения - <span><?php echo  $birthday; ?>  </span></span></li>
-                    <li>Дата регистрации - <span><?php echo  $reg_date; ?>  </span></li>
+                    <li>Дата регистрации - <span><?php echo  $date_reg; ?>  </span></li>
                 </ul>
             </div>
 
