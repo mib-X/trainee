@@ -1,5 +1,5 @@
 <header class="header">
     <div class="container">
-        <div class="logo">Trainee site</div>
+        <a href="/"><div class="logo">Trainee site</div></a>
     </div>
 </header>

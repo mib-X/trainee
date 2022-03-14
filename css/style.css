@@ -1,3 +1,6 @@
+header.header .container a {
+  color: #000;
+  text-decoration: none; }
 header.header .container .logo {
   background-color: lavender;
   font-size: 30px;
@@ -7,8 +10,6 @@ header.header .container .logo {
 
 nav.nav {
   background-color: #eee; }
-  nav.nav a.nav-link.active {
-    color: #000; }
   nav.nav a.nav-link {
     font-size: 18px;
     font-weight: 600; }
@@ -20,6 +21,12 @@ nav.nav {
 
 section.posts .container .row.justify-content-center .col-12.post {
   margin: 20px 0; }
+  section.posts .container .row.justify-content-center .col-12.post h2.h2.post__title a {
+    color: #000;
+    text-decoration: none; }
+  section.posts .container .row.justify-content-center .col-12.post h2.h2.post__title a:hover {
+    text-decoration: underline;
+    cursor: pointer; }
   section.posts .container .row.justify-content-center .col-12.post .post__header {
     display: flex;
     justify-content: start;
