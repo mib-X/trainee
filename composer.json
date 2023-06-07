@@ -6,10 +6,11 @@
   "authors": [
     {
       "name": "mib-X",
-      "email": "email@example.com"
+      "email": "mib4ik@gmail.com"
     }
   ],
   "require": {
-    "twbs/bootstrap": "5.0.2"
+    "twbs/bootstrap": "5.0.2",
+    "ext-pdo": "*"
   }
 }

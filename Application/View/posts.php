@@ -22,7 +22,7 @@
                         </div>
                     <?php endforeach;
                 } else {
-                    echo "Нет записей";
+                    echo "<h1>Нет записей</h1>";
                 } ?>
             </div>
         </div>

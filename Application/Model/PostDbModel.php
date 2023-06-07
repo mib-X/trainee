@@ -17,7 +17,6 @@ class PostDbModel extends ModelPDO
             } catch (\PDOException $exception){
                 echo "Ошибка выполнения запроса" . $exception->getMessage();
             }
-
         }
     }
     public function getPosts()

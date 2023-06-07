@@ -7,9 +7,8 @@ use \Core\ModelPDO as ModelPDO;
 
 class UserDbModel extends ModelPDO
 {
-    public function getUserById($id)
+    public function getUserById($id): ?array
     {
-        if($id){
             try{
                 $item = $this->pdo->prepare('SELECT id, name, email, image, date_reg, birthday FROM users WHERE id=:id');
                 $item->execute(['id'=>$id]);
@@ -17,6 +16,5 @@ class UserDbModel extends ModelPDO
             } catch (\PDOException $exception) {
                 echo "Ошибка выполнения запроса" . $exception->getMessage();
             }
-        }
     }
 }

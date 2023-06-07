@@ -12,9 +12,9 @@ class FillDbModel
     public $posts;
     public $users;
 
-    public function __construct()
+    public function __construct(\PDO $pdo)
     {
-        $this->pdo = PDOConnection::getConnection();
+        $this->pdo = $pdo;
         $this->posts = include ROOT . "/Application/config/posts.php";
         $this->users = include ROOT . "/Application/config/users.php";
     }

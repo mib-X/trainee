@@ -4,7 +4,7 @@
         <div class="row justify-content-center my-5">
             <div class="col-sm-4 mr-3">
                 <h2 class="py-3">mib-X</h2>
-                <img src="<?php echo HOST ;?>/img/user-logo.jpeg" alt="" class="user-logo">
+                <img src="<?php echo HOST . $image ;?>" alt="" class="user-logo">
             </div>
             <div class="col-sm-6">
                 <h2 class="py-3">Данные пользователя</h2>
