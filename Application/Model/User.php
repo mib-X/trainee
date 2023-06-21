@@ -2,6 +2,11 @@
 
 namespace Application\Model;
 
+/**
+ * Class User
+ * Domain object class User
+ * @package Application\Model
+ */
 class User extends DomainObject
 {
     private string $name;
@@ -9,12 +14,21 @@ class User extends DomainObject
     private string $register_date;
     private string $birthday;
     private string $image;
-    public function __construct($id, $name, $email, $register_dateAdded, $birthday, $image)
-    {
+    private string $password;
+    public function __construct(
+        $id,
+        $name,
+        $email,
+        $password,
+        $register_date,
+        $birthday = "1970-01-01",
+        $image = "/img/default-user-logo.jpg"
+    ) {
         parent::__construct($id);
         $this->name = $name;
         $this->email = $email;
-        $this->register_date = $register_dateAdded;
+        $this->password = $password;
+        $this->register_date = $register_date;
         $this->birthday = $birthday;
         $this->image = $image;
     }
@@ -97,5 +111,29 @@ class User extends DomainObject
     public function setImage(string $image): void
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param $password
+     */
+    public function setPassword(string $password): void
+    {
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function emailValidate()
+    {
+        return filter_var($this->email, FILTER_VALIDATE_EMAIL);
     }
 }

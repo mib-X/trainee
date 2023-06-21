@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Application\Model;
 
 class UserMapper extends Mapper
@@ -27,7 +26,8 @@ class UserMapper extends Mapper
         parent::__construct($pdo);
         $this->selectStmt = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
         $this->updateStmt = $this->pdo->prepare("UPDATE users SET name = ?, email = ?, image = ?, date_reg = ?, birthday = ? WHERE id = ?");
-        $this->insertStmt = $this->pdo->prepare("INSERT INTO users (id, name, email, image, date_reg, birthday) VALUES (null, :name, :email, :image, now(), :birthday)");
+        $this->insertStmt = $this->pdo->prepare("INSERT INTO users (id, name, email, image, date_reg, birthday, password) 
+                            VALUES (null, :name, :email, :image, now(), :birthday, :password)");
     }
 
     /**
@@ -36,9 +36,11 @@ class UserMapper extends Mapper
      */
     protected function doCreateObj(array $row): DomainObject
     {
-        $user = new User((int)$row['id'],
+        $user = new User(
+            (int)$row['id'],
             (string)$row['name'],
             (string)$row['email'],
+            (string)$row['password'],
             (string)$row['date_reg'],
             (string)$row['birthday'],
             (string)$row['image']
@@ -62,7 +64,8 @@ class UserMapper extends Mapper
         $values = ['name' => $obj->getName(),
             'email' => $obj->getEmail(),
             'image' => $obj->getImage(),
-            'birthday' => $obj->getBirthday()
+            'birthday' => $obj->getBirthday(),
+            'password' => $obj->getPassword()
         ];
         $this->insertStmt->execute($values);
         $obj->setId((int)$this->pdo->lastInsertId());
@@ -81,5 +84,24 @@ class UserMapper extends Mapper
                 $obj->getId()
             ];
         $this->updateStmt->execute($values);
+    }
+    public function getByEmail($email): ?DomainObject
+    {
+        $selectStmt = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $selectStmt->execute(['email' => $email]);
+        $row = $selectStmt->fetch(\PDO::FETCH_ASSOC);
+        if (! is_array($row)) {
+            return null;
+        }
+        if (! isset($row['email'])) {
+            return null;
+        }
+        return $this->createObj($row);
+    }
+    public function changePassword(int $user_id, string $password)
+    {
+        $pass = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $this->pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
+        $stmt->execute([$pass, $user_id]);
     }
 }

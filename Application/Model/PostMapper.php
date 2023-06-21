@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Application\Model;
-
 
 class PostMapper extends Mapper
 {
@@ -20,10 +18,11 @@ class PostMapper extends Mapper
                  description = ?,
                  thumb = ?   
                 WHERE id = ?");
-        $this->insertStmt = $this->pdo->prepare("INSERT INTO posts (id, title, author, date_added, description, thumb) VALUES (null, ?, ?, ?, ?, ?)");
+        $this->insertStmt = $this->pdo->prepare("INSERT INTO posts (id, title, author, date_added, description, thumb) 
+                            VALUES (null, ?, ?, ?, ?, ?)");
     }
 
-    protected function doCreateObj(array $row): DomainObject
+    protected function doCreateObj(array $row): Post
     {
         $post = new Post(
             $row['id'],
@@ -44,10 +43,10 @@ class PostMapper extends Mapper
     public function insert(DomainObject $obj): void
     {
         $values = [$obj->getTitle(),
-    $obj->getAuthor(),
-    $obj->getDateAdded(),
-    $obj->getDescription(),
-    $obj->getThumb()];
+        $obj->getAuthor(),
+        $obj->getDateAdded(),
+        $obj->getDescription(),
+        $obj->getThumb()];
         $this->insertStmt->execute($values);
         $obj->setId((int)$this->pdo->lastInsertId());
     }
@@ -65,7 +64,8 @@ class PostMapper extends Mapper
         $this->updateStmt->execute($values);
     }
 
-    public function getPosts($limit) {
+    public function getPosts($limit)
+    {
         $query = "SELECT * FROM posts LIMIT $limit";
         $selectAllStmt = $this->pdo->query($query);
         $rows = $selectAllStmt->fetchAll(\PDO::FETCH_ASSOC);

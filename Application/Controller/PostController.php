@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Application\Controller;
-
 
 use Application\Model\PostDbModel;
 use Application\Model\PostMapper;
@@ -17,7 +15,7 @@ class PostController extends Controller
         $this->title = "Post list";
 //        $modelDb = new PostDbModel();
 //        $data['posts'] = $modelDb->getPosts();
-        $mapper = new PostMapper(PDOConnection::getConnection());
+        $mapper = new PostMapper($this->registry->getPDO());
         $posts = $mapper->getPosts(10);
         $data['posts'] = [];
         foreach ($posts as $post) {
@@ -38,7 +36,7 @@ class PostController extends Controller
     {
 //        $model = new PostDbModel();
 //        $data = $model->getPostById($params['id']);
-        $mapper = new PostMapper(PDOConnection::getConnection());
+        $mapper = new PostMapper($this->registry->getPDO());
         $post = $mapper->getById($params['id']);
         $data = [
             'id' => $post->getId(),
@@ -48,7 +46,7 @@ class PostController extends Controller
             'description' => $post->getDescription(),
             'thumb' => $post->getThumb()
         ];
-        if(!empty($data)) {
+        if (!empty($data)) {
             $this->title = $data['title'];
             $page = $this->render('post', $data);
         } else {

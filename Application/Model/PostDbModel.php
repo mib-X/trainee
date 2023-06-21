@@ -9,12 +9,12 @@ class PostDbModel extends ModelPDO
 {
     public function getPostById($id)
     {
-        if($id){
-            try{
+        if ($id) {
+            try {
                 $item = $this->pdo->prepare('SELECT id, title, author, thumb, description, date_added FROM posts WHERE id=:id');
                 $item->execute(['id'=>$id]);
                 return $item->fetch(\PDO::FETCH_ASSOC);
-            } catch (\PDOException $exception){
+            } catch (\PDOException $exception) {
                 echo "Ошибка выполнения запроса" . $exception->getMessage();
             }
         }

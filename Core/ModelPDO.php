@@ -18,7 +18,7 @@ class ModelPDO
         if($id){
             $item = $this->pdo->prepare("SELECT * FROM $table WHERE id=:id");
             $item->execute(['id'=>$id]);
-            return $item->fetch(PDO::FETCH_ASSOC);
+            return $item->fetch(\PDO::FETCH_ASSOC);
         }
     }
 }

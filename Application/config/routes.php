@@ -6,5 +6,8 @@ return [
     '/test' => 'test/index',
     '/' => 'default/index',
     '/profile' => 'profile/index',
-    '/add' => 'add/index'
+    '/add' => 'add/index',
+    '/register' => 'register/index',
+    '/login' => 'login/index',
+    '/logout' => 'logout/index'
 ];

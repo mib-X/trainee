@@ -9,9 +9,9 @@ class View
 
     public function render(Page $page)
     {
-        return $this->renderLayout($page, $this->renderContent($page));
+        return $this->renderLayout($page, $this->renderContent($page), $this->getNav($page->get('nav')));
     }
-    private function getPart($view, $data = [])
+    public function getPart($view, $data = [])
     {
         $viewPartPath = ROOT . '/Application/View/' . $view . '.php';
         if (file_exists($viewPartPath)) {
@@ -24,21 +24,21 @@ class View
         }
     }
 
-//    private function getNav($data = [])
-//    {
-//        $viewPartPath = ROOT . '/Application/View/navigation.php';
-//        if (file_exists($viewPartPath)) {
-//            ob_start();
-//            extract($data);
-//            include $viewPartPath;
-//            return ob_get_clean();
-//        } else {
-//            echo "Нет такого файла представления " . $viewPartPath;
-//            die();
-//        }
-//    }
+    private function getNav($data = [])
+    {
+        $viewPartPath = ROOT . '/Application/View/navigation.php';
+        if (file_exists($viewPartPath)) {
+            ob_start();
+            $menu = $data;
+            include $viewPartPath;
+            return ob_get_clean();
+        } else {
+            echo "Нет такого файла представления " . $viewPartPath;
+            die();
+        }
+    }
 
-    private function renderLayout(Page $page, $content)
+    private function renderLayout(Page $page, $content, $navigation)
     {
         $layoutPath = ROOT . '/Application/View/layout/' . $page->get('layout') . '.php';
         if(file_exists($layoutPath)) {

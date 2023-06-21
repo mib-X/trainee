@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Application\Model;
-
 
 class Post extends DomainObject
 {
@@ -101,5 +99,4 @@ class Post extends DomainObject
     {
         $this->description = $description;
     }
-
 }
